@@ -1,13 +1,14 @@
 package cz.boris.shop;
 
-import lombok.Data;
-
 import java.math.BigDecimal;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 
-@Data
 public class Shop {
+
+    public Shop(String name) {
+        this.name = name;
+    }
 
     private final String name;
 
@@ -26,6 +27,10 @@ public class Shop {
 
     public BigDecimal getPrice() {
         return calculatePrice();
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public BigDecimal calculatePrice() {

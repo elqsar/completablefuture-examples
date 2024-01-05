@@ -1,0 +1,16 @@
+version: '2.1'
+
+orbs:
+  gradle: circleci/gradle@3.0.0
+
+executors:
+  jdk:
+    docker:
+      - image: 'cimg/openjdk:21.0.0'
+
+workflows:
+  version: 2
+  checkout-build-test:
+    jobs:
+      - gradle/test:
+          executor: jdk
